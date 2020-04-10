@@ -1,0 +1,92 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --primary: #6c739c;
+    --secondary: #0e0733;
+    --tertiary: rgb(225, 221, 236);
+    --grey: #3c3b41;
+    font-size: 62.5%;
+  } 
+
+  header {
+    background: var(--secondary);
+    font-size: 18;
+    padding: 30px 25px;
+    border-bottom: 5px solid var(--primary);
+  }
+  
+  header h1 {
+    color: var(--tertiary);    
+    margin: 5px 0 20px;
+    font-size: 3rem;
+  }
+
+  header h3 {
+    color: var(--tertiary); 
+  }
+
+  header h4 {
+    color: var(--secondary);    
+    padding: 30px 30px 30px 30px;    
+    margin: 20px 20px 20px 20px;
+    font-size: 2rem;
+  }
+
+  header p {
+    color: var(--tertiary);    
+    margin: 0px 0 0px;
+    font-size: 2rem;
+  }
+  
+  p,
+  li {
+    font-size: 1.6rem;    
+  }
+  
+
+#otis li {
+    list-style-type: none;
+}
+
+.list-group {
+    text-align: left;
+    /* background: #4169E1; */
+}
+
+.list-group button {
+    text-align: center;
+    background-color: #3c3b41; /* grey background */
+    border: 1px solid #3c3b41; /* grey border */
+    color: white; /* White text */
+    padding: 10px 24px; /* Some padding */
+    margin: 10px 110px; /* added padding to left and right */
+    cursor: pointer; /* Pointer/hand icon */
+    width: 50%; /* Set a width if needed */
+    display: block; /* Make the buttons appear below each other */
+  }
+  
+  .list-group button:not(:last-child) {
+    border-bottom: none; /* Prevent double borders */
+  }
+  
+  /* Add a background color on hover */
+  /* .list-group button:hover {
+    background-color: #4c8fe6;
+    border: 1px solid #4c8fe6;
+  } */
+
+  /* button:hover {
+    background-color: #4c8fe6;
+  } */
+
+  /* input:hover {
+    background-color: #e8eaed;
+  } */
+
+  .list-group button:not(:last-child) {
+    border-bottom: none; /* Prevent double borders */
+  }
+  
+ 

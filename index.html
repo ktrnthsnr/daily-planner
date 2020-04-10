@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Daily Planner</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="./assets/css/style.css" />
+    </head>
+    <body>
+
+        <header>
+            <section>
+                <h1>Daily Planner</h1>
+                <h3>Today's Date</h3>
+                <p id="date"></p>
+            </section>
+        </header>
+        
+        <!-- test
+        <div>            
+            <button class="list-group-item" id="save-task">add task</button>        
+        </div> -->
+
+        <!-- test
+        <br>
+        <div id="myDiv">Div sample for border</div>
+        <br>
+        <button type="button" onclick="setBorderAroundDivs()">Set border</button>
+        <br>
+        -->        
+    </br>
+        <h4>Click a time to enter a task</h4>
+    </br>
+        <!-- id from clicked button of click buttons -->
+        <ul id="sortable" class="list-group">
+            <li class="list-group"> <button id="1" type="button" onclick="buttonClick()">1:00 AM</button></li> 
+            <li class="list-group"> <button id="2" type="button" onclick="buttonClick()">2:00 AM</button> </li>
+            <li class="list-group"> <button id="3" type="button" onclick="buttonClick()">3:00 AM</button> </li>
+            <li class="list-group"> <button id="4" type="button" onclick="buttonClick()">4:00 AM</button> </li>
+            <li class="list-group"> <button id="5" type="button" onclick="buttonClick()">5:00 AM</button> </li>
+            <li class="list-group"> <button id="6" type="button" onclick="buttonClick()">6:00 AM</button> </li>
+            <li class="list-group"> <button id="7" type="button" onclick="buttonClick()">7:00 AM</button> </li>
+            <li class="list-group"> <button id="8" type="button" onclick="buttonClick()">7:00 AM</button> </li>
+            <li class="list-group"> <button id="9" type="button" onclick="buttonClick()">8:00 AM</button> </li>
+            <li class="list-group"> <button id="10" type="button" onclick="buttonClick()">9:00 AM</button> </li>
+            <li class="list-group"> <button id="11" type="button" onclick="buttonClick()">10:00 AM</button> </li>
+            <li class="list-group"> <button id="12" type="button" onclick="buttonClick()">12:00 PM</button> </li>
+            <li class="list-group"> <button id="13" type="button" onclick="buttonClick()">1:00 PM</button> </li>
+            <li class="list-group"> <button id="14" type="button" onclick="buttonClick()">2:00 PM</button> </li>
+            <li class="list-group"> <button id="15" type="button" onclick="buttonClick()">3:00 PM</button> </li>
+            <li class="list-group"> <button id="16" type="button" onclick="buttonClick()">4:00 PM</button> </li>
+            <li class="list-group"> <button id="17" type="button" onclick="buttonClick()">5:00 PM</button> </li>
+            <li class="list-group"> <button id="18" type="button" onclick="buttonClick()">6:00 PM</button> </li>
+            <li class="list-group"> <button id="19" type="button" onclick="buttonClick()">7:00 PM</button> </li>
+            <li class="list-group"> <button id="20" type="button" onclick="buttonClick()">8:00 PM</button> </li>
+            <li class="list-group"> <button id="21" type="button" onclick="buttonClick()">9:00 PM</button> </li>
+            <li class="list-group"> <button id="22" type="button" onclick="buttonClick()">10:00 PM</button> </li>
+            <li class="list-group"> <button id="23" type="button" onclick="buttonClick()">11:00 PM</button> </li>
+            <li class="list-group"> <button id="24" type="button" onclick="buttonClick()">12:00 AM</button></li>
+        </ul>
+
+        <div id="log"></div>
+
+    <script>
+
+        //in use!
+        //current date up top - reference stackoverflow Meddows
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0');
+        var yyyy = today.getFullYear();
+        today = mm + '/' + dd + '/' + yyyy;
+        document.getElementById("date").innerHTML = today;
+
+        //testing. button click actions
+            function buttonClick() {
+              //  document.getElementById('1').onclick = alert("hello.");
+                prompt("Enter task details for this hour.");
+            }
+    
+            //not used
+                // var buttonEl = document.querySelector("#save-task");
+                //     console.log(buttonEl);
+                //     buttonEl.addEventListener("click", function() {
+                //     var addTask = prompt("Enter in task details.");
+                // });
+
+            //background-color: #4169E1; /* blue background */
+            //border: 1px solid #4169E1; /* blue border */
+
+            //testing. not used
+                    // function rowColorByHour(){      //color the row by hour
+                    //     document.getElementById("24").style.border = "thick solid #0000FF"; //test
+                    // }  rowColorByHour();
+                              
+
+            //array showing color for current hour, after current hour, or before current hour.
+            var lis = document.getElementById("sortable").getElementsByTagName("li");
+            
+            var resultH = [];                      
+            var nowHourH = new Date().getHours(); 
+            for(var i = nowHourH; i < 25; i++) {
+                
+                if (i > nowHourH) {
+                    document.getElementById([i]).style.background = "#0cb614"; //green after current hour
+                    //document.getElementById([i]).addEventListener("mouseover", function( event) {
+                      //  event.target.style.backgroundColor = "pink"; //hover over pink
+                    //});    
+                    
+                    // document.getElementById([i]).addEventListener("mouseout", function() {
+                    //     document.getElementById([i]).style.backgroundColor = "#0cb614";  //hover over green
+                    // });
+
+                 }  else if (i < nowHourH) {
+                    document.getElementById([i]).style.background = "#333"; //green after current hour
+                          
+                } else {
+                    document.getElementById([i]).style.background = "#c75e17"; //red current 
+                    //add hover background color 
+                }
+            }                       
+            console.log(resultH); // show results
+            
+                            //---------------------css colors ------------------
+                                    //  button:hover {
+                                    //     background-color: #4c8fe6;   //light-blue
+                                    //  }
+
+                                    //background-color: #363647;        //blue  
+                                    //border: 1px solid #363647;        //blue  
+                            //---------------------css colors ------------------
+
+                // if (i < nowHourH) {
+                //     document.getElementById([i]).style.border = "thick solid #333";
+                // } else if (i > nowHour) {
+                //     document.getElementById([i]).style.border = "thick solid #497980";            
+                // } else {
+                //     document.getElementById([i]).style.border = "thick solid #44e9ff";
+                // }
+            
+
+
+        // not used  - array of document.getElementById and li ref:https://stackoverflow.com/questions/26078889/how-to-create-an-array-of-values-from-li-inside-a-ul
+                // var lis = document.getElementById("sortable").getElementsByTagName("li");
+                // var data = [];
+                // for(var i=0; i<lis.length; i++){
+                //     data.push(lis[i].innerText);  
+                // }
+                // var jsonFormated = JSON.stringify(data);
+                // document.getElementById("log").innerHTML = jsonFormated;
+
+                
+            // -- attempt at an array for document.getElementById onclikc
+        // for (var i = 0; i < buttonArray.length; i++) {
+        //     //document.getElementById(buttonArray[i]).onclick = alert("test");
+        //     //document.getElementById(buttonArray[i]).onClick = addTaskButton();  
+           
+        //     var buttonEl = document.querySelector("#save-task");
+        //         console.log(buttonEl);
+        //         buttonEl.addEventListener("click", function() {
+        //         var addTask = prompt("Enter in task details.");
+        //     });
+        // } 
+    
+   
+        // document.getElementById('1').onclick = addTaskButton; 
+        // document.getElementById('2').onclick = addTaskButton; 
+        // document.getElementById('3').onclick = addTaskButton; 
+        // document.getElementById('4').onclick = addTaskButton; 
+        // document.getElementById('5').onclick = addTaskButton; 
+        // document.getElementById('6').onclick = addTaskButton; 
+        // document.getElementById('7').onclick = addTaskButton; 
+        // document.getElementById('8').onclick = addTaskButton; 
+        // document.getElementById('9').onclick = addTaskButton; 
+        // document.getElementById('10').onclick = addTaskButton; 
+        // document.getElementById('11').onclick = addTaskButton; 
+        // document.getElementById('12').onclick = addTaskButton; 
+        // document.getElementById('13').onclick = addTaskButton; 
+        // document.getElementById('14').onclick = addTaskButton; 
+        // document.getElementById('15').onclick = addTaskButton; 
+        // document.getElementById('16').onclick = addTaskButton; 
+        // document.getElementById('17').onclick = addTaskButton; 
+        // document.getElementById('18').onclick = addTaskButton; 
+        // document.getElementById('19').onclick = addTaskButton; 
+        // document.getElementById('20').onclick = addTaskButton; 
+        // document.getElementById('21').onclick = addTaskButton; 
+        // document.getElementById('22').onclick = addTaskButton; 
+        // document.getElementById('23').onclick = addTaskButton; 
+        // document.getElementById('24').onclick = addTaskButton; 
+        
+        function addTaskButton(clicked) { 
+            
+            // for (var i = 0; i < buttonArray.length;i++)
+            // {
+            //     var taskButtonEl = document.querySelector("#taskDesc");
+            //     console.log(taskButtonEl);
+            //     taskButtonEl.addEventListener("click", function() {
+            //     var addTask = prompt("Enter task details here.");
+
+                el_down.innerHTML = "Button clicked, id = " 
+                + this.id; 
+            //});
+        }
+                  
+            //for testing. add an array showing current hour, before and after current hours. reference stackoverflow yajiv
+                    // var result = [];                      // Results will go here
+                    // var nowHour = new Date().getHours();  // Get current hour of the day
+                    // for(var i = nowHour; i < 25; i++) {  // Loop from current hour number to 23
+                        
+                    //     if (i < nowHour) {
+                    //         document.write('Before current hour ' + i + '</br>');  //broken here!
+                    //     } else if (i > nowHour) {
+                    //         document.write('After current hour ' + i + '</br>');    //working.             
+                    //     } else {
+                    //         var currentHr = document.write('Current Hour ' + i + '</br>');  //working.
+                    //     }
+                    // }
+                    // console.log(result); // show results
+
+
+            //for testing. add a border around a div
+            function setBorderAroundDivs() {
+                document.getElementById("myDiv").style.border = "thick solid #0000FF";
+            }
+
+            //create an array of click buttons. Did not do. Listed out.
+            //auto-generate the list of click buttons from js. Did not do. 
+            //create an array to distinguish hours before or after current hour. Complete.
+            
+            //convert 1-24 numbers to hours of the day
+
+ 
+
+     
+
+            //pseudocode
+            //2. Array of click buttons
+                // 0. array items into click buttons.   complete/did a list instead.
+                // 1. prompt for task info.             complete.
+                // 2. save to localStorage.             in work.
+                // 3. display from localStorage.        in work.            
+            //4. hover over per hour of the day
+                    // 1. find nowHour, hover:          complete.
+                    // 2. if (otherHours before nowHour) { complete.
+                    //     hover:grey                   
+                    // }
+                    // 3. if (otherhous after nowHour){ complete.
+                    //     hover: green
+                    // }
+
+    </script>
+        
+    </body>
+</html>
