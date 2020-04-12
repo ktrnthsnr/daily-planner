@@ -1,5 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    
+    <title>Daily Planner</title>
+  </head>
+  <body>
 
-//disable Enter button, so you can only save with Save button. -- the keydown function, reference: https://stackoverflow.com/questions/5629805/disabling-enter-key-for-form Tarik
+
+    <div class="clearfix">
+
+            <!-- input info | localStorage.setItem --- working  -->
+            <div class="card">
+                <h2>Enter a task</h2>
+                    <!-- Form -->
+                    <form method="POST">
+                        <button onclick="location.reload(true)" id="submit">Save ALL tasks</button> <h7>(Pressing this button will save ALL tasks at once. This will reset ALL tasks.)</h7>
+                        </br>
+                        </br>
+                        <div class="input-group">
+                            <label for="testID">1:00 AM</label>
+                            <input type="text" name="task" id="testID" placeholder="enter a task here" />  <span id="user-task"></span>
+                        </div>         
+
+                        <div class="input-group">
+                                <label for="task2">2:00 AM</label>
+                                <input type="text"  name="task2" id="task2" placeholder="enter a task here" /> <span id="user-task2"></span>                            
+                        </div>
+
+                        <div class="input-group">
+                            <label for="task3">3:00 AM</label>
+                                <input type="text"  name="task3" id="task3" placeholder="enter a task here" /> <span id="user-task3"></span>                            
+                        </div> 
+
+                        <div class="input-group">
+                            <label for="task4">4:00 AM</label>
+                                <input type="text"  name="task4" id="task4" placeholder="enter a task here" /> <span id="user-task4"></span>                   
+                        </div>
+
+                        <div class="input-group">
+                            <label for="task5">5:00 AM</label>
+                                <input type="text"  name="task5" id="task5" placeholder="enter a task here" /> <span id="user-task5"></span>                            
+                        </div>
+
+                        <div class="input-group">
+                            <label for="task6">6:00 AM</label>
+                                <input type="text"  name="task6" id="task6" placeholder="enter a task here" /> <span id="user-task6"></span>                            
+                        </div>
+
+                        <div class="input-group">
+                            <label for="task7">7:00 AM</label>
+                                <input type="text"  name="task7" id="task7" placeholder="enter a task here" /> <span id="user-task7"></span>                            
+                        </div>
+
+                        <div class="input-group">
+                            <label for="task8">8:00 AM</label>
+                                <input type="text"  name="task8" id="task8" placeholder="enter a task here" /> <span id="user-task8"></span>                            
+                        </div>
+
+                        <div class="input-group">
+                            <label for="task9">9:00 AM</label>
+                                <input type="text"  name="task9" id="task9" placeholder="enter a task here" /> <span id="user-task9"></span>                            
+                        </div>
+
+                        <div class="input-group">
+                            <label for="task10">10:00 AM</label>
+                                <input type="text"  name="task10" id="task10" placeholder="enter a task here" /> <span id="user-task10"></span>                            
+                        </div>
+
+                        <div class="input-group">
+                            <label for="task11">11:00 AM</label>
+                                <input type="text"  name="task11" id="task11" placeholder="enter a task here" /> <span id="user-task11"></span>                            
+                        </div>
+
+                        <div class="input-group">
+                            <label for="task12">12:00 PM</label>
+                                <input type="text"  name="task12" id="task12" placeholder="enter a task here" /> <span id="user-task12"></span>                            
+                        </div>
+
+                        <div class="input-group">
+                            <label for="task13">1:00 PM</label>
+                                <input type="text"  name="task13" id="task13" placeholder="enter a task here" /> <span id="user-task13"></span>                            
+                        </div>
+
+                        <div class="input-group">
+                            <label for="task14">2:00 PM</label>
+                                <input type="text"  name="task14" id="task14" placeholder="enter a task here" /> <span id="user-task14"></span>                            
+                        </div>
+
+                        <div class="input-group">
+                            <label for="task15">3:00 PM</label>
+                                <input type="text"  name="task15" id="task15" placeholder="enter a task here" /> <span id="user-task15"></span>                            
+                        </div>
+
+                        <div class="input-group">
+                            <label for="task16">4:00 PM</label>
+                                <input type="text"  name="task16" id="task16" placeholder="enter a task here" /> <span id="user-task16"></span>                            
+                        </div>
+
+                        <div class="input-group">
+                            <label for="task17">5:00 PM</label>
+                                <input type="text"  name="task17" id="task17" placeholder="enter a task here" /> <span id="user-task17"></span>                            
+                        </div>
+
+                        <div class="input-group">
+                            <label for="task18">6:00 PM</label>
+                                <input type="text"  name="task2" id="task18" placeholder="enter a task here" /> <span id="user-task18"></span>                            
+                        </div>
+
+                        <div class="input-group">
+                            <label for="task19">7:00 PM</label>
+                                <input type="text"  name="task18" id="task19" placeholder="enter a task here" /> <span id="user-task19"></span>                            
+                        </div>
+
+                        <div class="input-group">
+                            <label for="task20">8:00 PM</label>
+                                <input type="text"  name="task19" id="task20" placeholder="enter a task here" /> <span id="user-task20"></span>                            
+                        </div>
+                        <div class="input-group">
+                            <label for="task21">9:00 PM</label>
+                                <input type="text"  name="task20" id="task21" placeholder="enter a task here" /> <span id="user-task21"></span>                            
+                        </div>
+
+                        <div class="input-group">
+                            <label for="task22">10:00 PM</label>
+                                <input type="text"  name="task21" id="task22" placeholder="enter a task here" /> <span id="user-task22"></span>                            
+                        </div>
+
+                        <div class="input-group">
+                            <label for="task23">11:00 PM</label>
+                                <input type="text"  name="task22" id="task23" placeholder="enter a task here" /> <span id="user-task23"></span>                            
+                        </div>
+
+                        <div class="input-group">
+                            <label for="task24">12:00 PM</label>
+                                <input type="text"  name="task23" id="task24" placeholder="enter a task here" /> <span id="user-task24"></span>                            
+                        </div>
+
+                            <div id="msg">
+                            </div>
+
+                        </br>                        
+                       
+                    </form>
+            </div>
+            
+    </div>
+
+     
+        <!-- clears local storage and f5-->
+        <p><button onclick="clearTasks();location.reload(true)" type="button">Clear all tasks.</button></p>
+
+
+   
+<script>  // --------------------------- working ------------------------------------------- //
+
+//disable Enter button, so you can only save with Save button. -- reference: https://stackoverflow.com/questions/5629805/disabling-enter-key-for-form Tarik
 window.addEventListener('keydown',function(e){if(e.keyIdentifier=='U+000A'||e.keyIdentifier=='Enter'||e.keyCode==13){if(e.target.nodeName=='INPUT'&&e.target.type=='text'){e.preventDefault();return false;}}},true);
 
 
@@ -225,3 +383,7 @@ renderLastRegistered();
         }
 
 // ---------------------------------------------------------------------- //
+
+    </script> 
+  </body>
+</html>
